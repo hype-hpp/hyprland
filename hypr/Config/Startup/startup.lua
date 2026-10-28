@@ -1,17 +1,15 @@
--------------------
----- AUTOSTART ----
--------------------
+--local apps = require("Config/myprograms")
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
+-- Função auxiliar para rodar comandos em background de forma limpa
+local function exec(cmd)
+    hl.exec(cmd)
+end
 
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
- hl.on("hyprland.start", function ()
-    --hl.exec_cmd(terminal)
+hl.on("hyprland.start", function()
+    -- ----------------------------------------------------
+    -- SISTEMA & BARRA (Executados primeiro)
+    -- ----------------------------------------------------
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprpaper")
     hl.exec_cmd("nm-applet")
-    hl.exec_cmd("waybar & hprpaper")
-    hl.exec("notify-send 'Hyprland' 'Startup executado'")
- end)
-
- 
+end)

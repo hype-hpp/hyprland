@@ -39,7 +39,7 @@ require("Config/monitors")
 ---- AUTOSTART ----
 -------------------
 
-require("Config/startup")
+require("Config/Startup/startup")
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
